@@ -10,6 +10,7 @@ var mysql = require('mysql');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var businesses = require('./routes/businesses');
+var working = require('./routes/working');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(cookieParser());
 app.use('/', index);
 app.use('/users', users);
 app.use('/businesses', businesses);
+app.get('/working', working.index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
