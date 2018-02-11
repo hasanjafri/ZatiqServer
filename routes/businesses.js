@@ -7,6 +7,7 @@ var connect_to_db = mysql.createConnection({
     user: process.env.RDS_USERNAME,
     password: process.env.RDS_PASSWORD,
     port: process.env.RDS_PORT,
+    database: process.env.RDS_DB_NAME
 });
 
 router.post('/', function(req, res, next) {
