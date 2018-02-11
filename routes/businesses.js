@@ -3,10 +3,11 @@ var router = express.Router();
 var mysql = require('mysql');
 
 var connect_to_db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'newpassword',
-    database: 'ZatiqDB'
+    host: process.env.RDS_HOSTNAME,
+    user: process.env.RDS_USERNAME,
+    password: process.env.RDS_PASSWORD,
+    port: process.env.RDS_PORT,
+    database: process.env.RDS_DB_NAME
 });
 
 router.post('/', function(req, res, next) {
