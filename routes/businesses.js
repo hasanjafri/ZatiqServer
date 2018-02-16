@@ -10,14 +10,6 @@ var mysql = require('mysql');
 //     database: process.env.RDS_DB_NAME
 // });
 
-var connect_to_db = mysql.createConnection({
-    host: 'zatiqdb.c7jcnoczfdsk.us-west-2.rds.amazonaws.com',
-    user: 'ZatiqDev',
-    password: 'zatiqdevs3',
-    port: 3279,
-    database: 'Zatiq_Database'
-});
-
 router.post('/', function(req, res, next) {
   var businessEmail = req.body.businessEmail;
   var businessPassword = req.body.businessPassword;
